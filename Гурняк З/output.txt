@@ -1,8 +1,0 @@
-Addition Steps: ['1 + 2 = 3', '2 + 4 = 6', '3 + 5 = 8']
-Addition: [3, 6, 8]
-Subtraction Steps: ['1 - 2 = -1', '2 - 4 = -2', '3 - 5 = -2']
-Subtraction: [-1, -2, -2]
-Division Steps: ['1 / 2 = 0.5', '2 / 4 = 0.5', '3 / 5 = 0.6']
-Division: [0.5, 0.5, 0.6]
-Dot Product Steps: ['1 * 2 = 2', '2 * 4 = 8', '3 * 5 = 15', '2 + 8 + 15 = 25']
-Dot Product: 25
