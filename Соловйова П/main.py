@@ -32,4 +32,4 @@ with open("output.txt", "w") as out:
     out.write("Множення: " + mul_str + "\n")
     out.write("Ділення: " + div_str + "\n")
 
-print("Результати записано у 'result.txt'")
+
