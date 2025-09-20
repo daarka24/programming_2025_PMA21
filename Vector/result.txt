@@ -1,0 +1,10 @@
+First vector: (1.0, 1.0, 1.0)
+Second vector: (0.0, 0.0, 0.0)
+Sum: (1.0, 1.0, 1.0)
+Subtract: (1.0, 1.0, 1.0)
+Multiply: (0.0, 0.0, 0.0)
+Divide: Error - division by zero
+First vector * by (2.0): (2.0, 2.0, 2.0)
+First vector / by (0.0): First vector / by (0.0): Error - division by zero
+Second vector * by (2.0): (0.0, 0.0, 0.0)
+Second vector / by (0.0): Second vector / by (0.0): Error - division by zero
