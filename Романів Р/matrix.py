@@ -32,14 +32,22 @@ def check_length_of_matrices(A, B):
     return True
 
 
+
 def columns_equal_to_rows(A, B):
     return len(A[0]) == len(B)
+
+
 
 
 #додавання
 def sum(A, B):
     if not check_length_of_matrices(A, B):
-        raise ValueError("the length of the matrices must be equal")
+        try:
+            raise ValueError("the length of the matrices must be equal")
+        except ValueError:
+            print("the length of the matrices must be equal")
+            return
+
 
     new_matrix = []
     for i in range(len(A)):
@@ -54,7 +62,11 @@ def sum(A, B):
 #віднімання
 def sub(A, B):
     if not check_length_of_matrices(A, B):
-        raise ValueError("the length of the matrices must be equal")
+        try:
+            raise ValueError("the length of the matrices must be equal")
+        except ValueError:
+            print("the length of the matrices must be equal")
+            return
 
     new_matrix = []
     for i in range(len(A)):
@@ -69,17 +81,24 @@ def sub(A, B):
 #множення
 def mul(A, B):
     if not columns_equal_to_rows(A, B):
-        raise ValueError("columns must be equal to rows")
-
-    new_matrix = []
-    for i in range(len(A)):
-        row = []
-        for j in range(len(B[0])):
-            el = 0
-            for k in range(len(A)):
-                el += A[i][k] * B[k][j]
-            row.append(el)
-        new_matrix.append(row)
+        try:
+            raise ValueError("columns must be equal to rows")
+        except ValueError:
+            print("columns must be equal to rows")
+            return
+    try:
+        new_matrix = []
+        for i in range(len(A)):
+            row = []
+            for j in range(len(B[0])):
+                el = 0
+                for k in range(len(A)):
+                    el += A[i][k] * B[k][j]
+                row.append(el)
+            new_matrix.append(row)
+    except IndexError:
+        print("Our list is not matrix")
+        return
 
     return new_matrix
 
@@ -98,7 +117,11 @@ def gauss(a):
                     a[i], a[j] = a[j], a[i]
                     break
             else:
-                raise ValueError("Matrix is not invertible")
+                try:
+                    raise ValueError("Matrix is not invertible")
+                except ValueError:
+                    print("Matrix is not invertible")
+                    return False
         for j in range(i+1, len(a)):
             eliminate(a[i], a[j], i)
     for i in range(len(a)-1, -1, -1):
@@ -111,9 +134,13 @@ def gauss(a):
 def inverse(a):
     tmp = [[] for _ in a]
     for i,row in enumerate(a):
-        assert len(row) == len(a)
+        if len(row) != len(a):
+            print("rows != cols")
+            return []
         tmp[i].extend(row + [0]*i + [1] + [0]*(len(a)-i-1))
-    gauss(tmp)
+    error = gauss(tmp)
+    if not error:
+        return []
     return [tmp[i][len(tmp[i])//2:] for i in range(len(tmp))]
 
 
@@ -121,7 +148,10 @@ def div(A, B):
     if not columns_equal_to_rows(A, B):
         raise ValueError("columns must be equal to rows")
 
-    return mul(A, inverse(B))
+    inversed = inverse(B)
+    if not inversed:
+        return
+    return mul(A, inversed)
 
 if __name__ == "__main__":
     with open("input_matrix.txt", "r") as file:
@@ -159,7 +189,10 @@ if __name__ == "__main__":
         result = div(first, second)
 
     with open("output_matrix.txt", "w") as file:
-        for row in result:
-            file.write(str(row) + "\n")
+        if not result:
+            file.write(str(result))
+        else:
+            for row in result:
+                file.write(str(row) + "\n")
 
     print("Результат записано: " + str(result))
