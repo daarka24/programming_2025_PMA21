@@ -33,7 +33,8 @@ class Matrix:
     # додавання
     def sum(self, other):
         if not self._check_length_of_matrices(other):
-            raise ValueError("the length of the matrices must be equal")
+            print("the length of the matrices must be equal")
+            return
 
         new_matrix = self.matrix.copy()
         for i in range(len(self.matrix)):
@@ -46,7 +47,8 @@ class Matrix:
     # віднімання
     def sub(self, other):
         if not self._check_length_of_matrices(other):
-            raise ValueError("the length of the matrices must be equal")
+            print("the length of the matrices must be equal")
+            return
 
         new_matrix = self.matrix.copy()
         for i in range(len(self.matrix)):
@@ -59,17 +61,22 @@ class Matrix:
     # множення
     def mul(self, other):
         if not self._columns_equal_to_rows(other):
-            raise ValueError("columns must be equal to rows")
+            print("columns must be equal to rows")
+            return
+        try:
+            new_matrix = []
+            for i in range(len(self.matrix)):
+                row = []
+                for j in range(len(other.matrix[0])):
+                    el = 0
+                    for k in range(len(self.matrix)):
+                        el += self.matrix[i][k] * other.matrix[k][j]
+                    row.append(el)
+                new_matrix.append(row)
+        except IndexError:
+            print("Our list is not matrix")
+            return
 
-        new_matrix = []
-        for i in range(len(self.matrix)):
-            row = []
-            for j in range(len(other.matrix[0])):
-                el = 0
-                for k in range(len(self.matrix)):
-                    el += self.matrix[i][k] * other.matrix[k][j]
-                row.append(el)
-            new_matrix.append(row)
 
         return Matrix(new_matrix)
 
@@ -89,7 +96,8 @@ class Matrix:
                         a[i], a[j] = a[j], a[i]
                         break
                 else:
-                    raise ValueError("Matrix is not invertible")
+                    print("Matrix is not invertible")
+                    return False
             for j in range(i + 1, len(a)):
                 self._eliminate(a[i], a[j], i)
         for i in range(len(a) - 1, -1, -1):
@@ -103,13 +111,21 @@ class Matrix:
         tmp = [[] for _ in self.matrix]
         for i, row in enumerate(self.matrix):
             if len(row) != len(self.matrix):
-                raise ValueError("lengths must be equal")
+                print("our list is not matrix")
+                return []
             tmp[i].extend(row + [0] * i + [1] + [0] * (len(self.matrix) - i - 1))
-        self._gauss(tmp)
+        error = self._gauss(tmp)
+        if not error:
+            return []
         return Matrix([tmp[i][len(tmp[i]) // 2:] for i in range(len(tmp))])
 
     def div(self, other):
         if not self._columns_equal_to_rows(other):
-            raise ValueError("columns must be equal to rows")
+            print("columns must be equal to rows")
+            return
 
-        return self.mul(other.inverse())
+        inversed = other.inverse()
+        if not inversed:
+            return
+
+        return self.mul(inversed)

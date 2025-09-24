@@ -59,7 +59,10 @@ if __name__ == "__main__":
         result = first.div(second)
 
     with open("output_matrix.txt", "w") as file:
-        for row in result:
-            file.write(str(row) + "\n")
+        if result is not None:
+            for row in result:
+                file.write(str(row) + "\n")
+        else:
+            file.write("None")
 
     print("Результат записано: " + str(result))
