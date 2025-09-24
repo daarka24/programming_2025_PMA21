@@ -83,49 +83,43 @@ class Matrix:
 
     # ділення
     @staticmethod
-    def _eliminate(r1, r2, col, target=0):
-        fac = (r2[col] - target) / r1[col]
-        for i in range(len(r2)):
-            r2[i] -= fac * r1[i]
+    def sub_matr(matrix, i, j):
+        return [[matrix[p][k] for k in range(len(matrix[p])) if k != j] for p in range(len(matrix)) if p != i]
 
-    def _gauss(self, a):
-        for i in range(len(a)):
-            if a[i][i] == 0:
-                for j in range(i + 1, len(a)):
-                    if a[i][j] != 0:
-                        a[i], a[j] = a[j], a[i]
-                        break
-                else:
-                    print("Matrix is not invertible")
-                    return False
-            for j in range(i + 1, len(a)):
-                self._eliminate(a[i], a[j], i)
-        for i in range(len(a) - 1, -1, -1):
-            for j in range(i - 1, -1, -1):
-                self._eliminate(a[i], a[j], i)
-        for i in range(len(a)):
-            self._eliminate(a[i], a[i], i, target=1)
-        return a
+    @staticmethod
+    def det(matrix):
+        if len(matrix) == 1:
+            return matrix[0][0]
 
-    def inverse(self):
-        tmp = [[] for _ in self.matrix]
-        for i, row in enumerate(self.matrix):
-            if len(row) != len(self.matrix):
-                print("our list is not matrix")
-                return []
-            tmp[i].extend(row + [0] * i + [1] + [0] * (len(self.matrix) - i - 1))
-        error = self._gauss(tmp)
-        if not error:
+        d = 0
+        for j in range(len(matrix[0])):
+            submatrix = Matrix.sub_matr(matrix, 0, j)
+            d += matrix[0][j] * (-1) ** j * Matrix.det(submatrix)
+        return d
+
+    @staticmethod
+    def transpose(matrix):
+        return [[matrix[j][i] for j in range(len(matrix[i]))] for i in range(len(matrix))]
+
+    @staticmethod
+    def algebraic_addition(matrix, i, j):
+        return ((-1) ** (i + j + 2)) * Matrix.det(Matrix.sub_matr(matrix, i, j))
+
+    @staticmethod
+    def inverse(matrix):
+        determinant = Matrix.det(matrix)
+
+        if determinant == 0:
+            print("Матриця не має оберненої. Детермінант = 0.")
             return []
-        return Matrix([tmp[i][len(tmp[i]) // 2:] for i in range(len(tmp))])
+
+        almost_inverse = Matrix.transpose([[Matrix.algebraic_addition(matrix, i, j) / determinant for j in range(len(matrix[i]))] for i in range(len(matrix))])
+        return Matrix([[almost_inverse[i][j] / determinant for j in range(len(almost_inverse[i]))] for i in range(len(almost_inverse))])
 
     def div(self, other):
-        if not self._columns_equal_to_rows(other):
-            print("columns must be equal to rows")
-            return
-
-        inversed = other.inverse()
-        if not inversed:
-            return
-
-        return self.mul(inversed)
+        try:
+            inversed = Matrix.inverse(other.matrix)
+            return self.mul(inversed)
+        except:
+            print("неможливо поділити")
+            return []
