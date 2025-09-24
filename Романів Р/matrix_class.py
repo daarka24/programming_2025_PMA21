@@ -123,4 +123,3 @@ class Matrix:
         except:
             print("неможливо поділити")
             return []
-

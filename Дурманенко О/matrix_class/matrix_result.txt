@@ -1,0 +1,28 @@
+First Matrix:
+[1.0, 2.0, 3.0]
+[4.0, 5.0, 6.0]
+[7.0, 8.0, 9.0]
+
+Second Matrix:
+[0.0, 0.0, 0.0]
+[0.0, 0.0, 0.0]
+[0.0, 0.0, 0.0]
+
+Matrix Sum (A + B):
+[1.0, 2.0, 3.0]
+[4.0, 5.0, 6.0]
+[7.0, 8.0, 9.0]
+
+Matrix Difference (A - B):
+[1.0, 2.0, 3.0]
+[4.0, 5.0, 6.0]
+[7.0, 8.0, 9.0]
+
+Matrix Product (A * B):
+[0.0, 0.0, 0.0]
+[0.0, 0.0, 0.0]
+[0.0, 0.0, 0.0]
+
+Matrix Division (A / B):
+Error: Cannot divide - division by zero or matrix not invertible
+
