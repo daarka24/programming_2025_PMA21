@@ -1,0 +1,36 @@
+Operation: Addition
+Matrix A:
+2 4
+3 8
+Matrix B:
+0 0
+0 0
+Result:
+2 4
+3 8
+
+Operation: Subtraction
+Matrix A:
+2 4
+3 8
+Matrix B:
+0 0
+0 0
+Result:
+2 4
+3 8
+
+Operation: Multiplication
+Matrix A:
+2 4
+3 8
+Matrix B:
+0 0
+0 0
+Result:
+0 0
+0 0
+
+Operation: Division
+Error: Matrix is singular and cannot be inverted.
+
