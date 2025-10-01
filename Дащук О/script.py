@@ -1,45 +1,54 @@
+class Vector:
+    def __init__(self, values):
+        self.values = values
 
+    def length(self):
+        return len(self.values)
 
-with open("file.txt", "r") as file:
- line_one=file.readline()
- line_two=file.readline()
+    def __getitem__(self, i):
+        return self.values[i]
 
-line_one=line_one.split()
-line_two=line_two.split()
-vector_one=[]
-vector_two=[]
+    def addvector(self, other):
+        if self.length() != other.length():
+            return "Error: vectors have different length"
+        return tuple([self[i] + other[i] for i in range(self.length())])
 
-for i in line_one:
-    vector_one.append(float(i))
-for i in line_two:
-    vector_two.append(float(i))
-print("Вхідні значення: ")
-print(vector_one)
-print(vector_two)
-print("\n")
-def addvector(vector_one, vector_two):
-    return tuple([vector_one[i] + vector_two[i] for i in range(len(vector_one))])
-def minusvector(vector_one, vector_two):
-    return tuple([vector_one[i] - vector_two[i] for i in range(len(vector_one))])
-def multiplyvector(vector_one, vector_two):
-    return tuple([vector_one[i] * vector_two[i] for i in range(len(vector_one))])
-def dividevector(vector_one, vector_two):
-    return tuple([vector_one[i] / vector_two[i] for i in range(len(vector_one))])
+    def minusvector(self, other):
+        if self.length() != other.length():
+            return "Error: vectors have different length"
+        return tuple([self[i] - other[i] for i in range(self.length())])
 
-print("Результат:")
-print(addvector(vector_one, vector_two))
-print(minusvector(vector_one, vector_two))
-print(multiplyvector(vector_one, vector_two))
-print(dividevector(vector_one, vector_two))
+    def multiplyvector(self, other):
+        if self.length() != other.length():
+            return "Error: vectors have different length"
+        return tuple([self[i] * other[i] for i in range(self.length())])
+
+    def dividevector(self, other):
+        if self.length() != other.length():
+            return "Error: vectors have different length"
+        return tuple([self[i] / other[i] if other[i] != 0 else float('inf') for i in range(self.length())])
+
+try:
+    with open("file.txt", "r") as file:
+        lines = file.readlines()
+        vector_one = Vector([float(a) for a in lines[0].strip().split()])
+        vector_two = Vector([float(a) for a in lines[1].strip().split()])
+except:
+    print("File not found.")
+
+sum_result = vector_one.addvector(vector_two)
+min_result = vector_one.minusvector(vector_two)
+mult_result=vector_one.multiplyvector(vector_two)
+div_result=vector_one.dividevector(vector_two)
 with open("result.txt", "w") as file:
     file.write("sum:" )
-    file.write(str(addvector(vector_one, vector_two)))
+    file.write(str(sum_result))
     file.write("\n")
     file.write("subt:")
-    file.write(str(minusvector(vector_one, vector_two)))
+    file.write(str(min_result))
     file.write("\n")
     file.write("multiply:")
-    file.write(str(multiplyvector(vector_one, vector_two)))
+    file.write(str(mult_result))
     file.write("\n")
-    file.write("divide:")
-    file.write(str(dividevector(vector_one, vector_two)))
+    file.write("division:")
+    file.write(str(div_result))
