@@ -1,0 +1,11 @@
+A + B:
+Cannot perform addition — matrices are different in size.
+
+A - B:
+Cannot perform subtraction — matrices are different in size.
+
+A * B:
+Cannot perform multiplication — incompatible matrix dimensions.
+
+A / B:
+Cannot perform division — matrix B is not square or incompatible dimensions.
