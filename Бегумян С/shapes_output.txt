@@ -1,0 +1,11 @@
+Circle is Red
+Area: 78.54
+Perimeter: 31.42
+
+Rectangle is Blue
+Area: 24
+Perimeter: 20
+
+Square is Green
+Area: 9
+Perimeter: 12
