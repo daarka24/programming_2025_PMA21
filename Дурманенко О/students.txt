@@ -1,0 +1,7 @@
+Rick|Astley|1966-02-06|100, 100, 100
+Aboba|Boba|1488-01-01|10, 20, 30
+Peter Parker|2004-08-10
+Walter White|Chemistry Professor|1959-09-07|12, 12
+Gigachad Sigma|1990-01-01|100, ninety, 100
+SpongeBob |SquarePants|1986-07-14|50, 50, 50
+John Wick|2014-10-24|95, 98, 99

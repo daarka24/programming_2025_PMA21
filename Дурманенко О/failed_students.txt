@@ -1,0 +1,25 @@
+ERRORS FOUND DURING FILE READING:
+
+- Line 3: Expected 4 fields separated by '|', but got 2
+- Line 5: Expected 4 fields separated by '|', but got 3
+- Line 7: Expected 4 fields separated by '|', but got 3
+
+Successfully processed: 4 students
+
+Students who failed the session (3):
+
+Name: Aboba Boba
+Birth date: 1488-01-01
+Grades: 10, 20, 30
+Average grade: 20.00
+
+Name: Walter White Chemistry Professor
+Birth date: 1959-09-07
+Grades: 12, 12
+Average grade: 12.00
+
+Name: SpongeBob SquarePants
+Birth date: 1986-07-14
+Grades: 50, 50, 50
+Average grade: 50.00
+
