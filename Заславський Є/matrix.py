@@ -1,12 +1,25 @@
-def read_matrix(filename):
+def read_data(filename):
     with open(filename, 'r') as f:
         lines = f.readlines()
-    matrix = []
-    for line in lines:
-        if line.strip():
+
+    operation = lines[0].strip()
+
+    first_matrix = []
+    second_matrix = []
+    current_matrix = 1
+
+    for line in lines[1:]:
+        line = line.strip()
+        if not line:
+            current_matrix = 2
+        elif line:
             numbers = [float(x) for x in line.split()]
-            matrix.append(numbers)
-    return matrix
+            if current_matrix == 1:
+                first_matrix.append(numbers)
+            else:
+                second_matrix.append(numbers)
+
+    return operation, first_matrix, second_matrix
 
 
 def save_matrix(matrix, filename):
@@ -53,30 +66,35 @@ def multiply(A, B):
     return result
 
 
-def inverse(matrix):
-    n = len(matrix)
-    aug = []
-    for i in range(n):
-        row = matrix[i][:] + [0] * n
-        row[n + i] = 1
-        aug.append(row)
+def is_zero_matrix(matrix):
+    for row in matrix:
+        for val in row:
+            if val != 0:
+                return False
+    return True
 
+
+def inverse(matrix):
+    if is_zero_matrix(matrix):
+        raise ValueError("Помилка: Ділення на нульовий елемент")
+
+    n = len(matrix)
+
+    aug = [row[:] + [1 if i == j else 0 for j in range(n)] for i, row in enumerate(matrix)]
 
     for i in range(n):
         pivot = aug[i][i]
-        for j in range(2 * n):
-            aug[i][j] /= pivot
+        if pivot == 0:
+            raise ValueError("Матриця необернена")
+
+        aug[i] = [x / pivot for x in aug[i]]
 
         for k in range(n):
             if k != i:
                 factor = aug[k][i]
-                for j in range(2 * n):
-                    aug[k][j] -= factor * aug[i][j]
+                aug[k] = [aug[k][j] - factor * aug[i][j] for j in range(2 * n)]
 
-    inv = []
-    for i in range(n):
-        inv.append(aug[i][n:])
-    return inv
+    return [row[n:] for row in aug]
 
 
 def divide(A, B):
@@ -84,56 +102,49 @@ def divide(A, B):
     return multiply(A, B_inv)
 
 
-def main():
-    print("1 - Додавання")
-    print("2 - Віднімання")
-    print("3 - Множення")
-    print("4 - Ділення")
+def check_matrix_dimensions(A, B, operation):
+    for m, name in [(A, 'A'), (B, 'B')]:
+        if not all(len(row) == len(m[0]) for row in m):
+            raise ValueError(f"Помилка: матриця {name} має рядки різної довжини")
 
-    choice = input("Оберіть операцію 1-4: ")
+    rows_A = len(A)
+    cols_A = len(A[0]) if A else 0
+    rows_B = len(B)
+    cols_B = len(B[0]) if B else 0
+
+    if operation in ['+', '-']:
+        if rows_A != rows_B or cols_A != cols_B:
+            raise ValueError("Помилка: різні розміри")
+
+    elif operation == '*':
+        if cols_A != rows_B:
+            raise ValueError("Помилка: різні розміри")
+
+    elif operation == '/':
+        if rows_B != cols_B or cols_A != rows_B:
+            raise ValueError("Помилка: різні розміри")
 
 
-    with open('data2.txt', 'r') as f:
-        lines = f.readlines()
+try:
+    operation, first_matrix, second_matrix = read_data('data2.txt')
 
+    check_matrix_dimensions(first_matrix, second_matrix, operation)
 
-    first_matrix = []
-    second_matrix = []
-    current_matrix = 1
-
-    for line in lines:
-        line = line.strip()
-        if not line:
-            current_matrix = 2
-        elif line:
-            numbers = [float(x) for x in line.split()]
-            if current_matrix == 1:
-                first_matrix.append(numbers)
-            else:
-                second_matrix.append(numbers)
-
-    print("\nПерша матриця:")
-    print_matrix(first_matrix)
-    print("\nДруга матриця:")
-    print_matrix(second_matrix)
-
-    if choice == '1':
+    if operation == '+':
         result = add(first_matrix, second_matrix)
-        print("\nРезультат додавання:")
-    elif choice == '2':
+    elif operation == '-':
         result = subtract(first_matrix, second_matrix)
-        print("\nРезультат віднімання:")
-    elif choice == '3':
+    elif operation == '*':
         result = multiply(first_matrix, second_matrix)
-        print("\nРезультат множення:")
-    elif choice == '4':
+    elif operation == '/':
         result = divide(first_matrix, second_matrix)
-        print("\nРезультат ділення:")
 
-    print_matrix(result)
-    save_matrix(result, '../result2.txt')
-    print("\nРезультат збережено у файл result2.txt")
+    save_matrix(result, 'result2.txt')
+    print("Записано у result2.txt")
 
-
-if __name__ == "__main__":
-    main()
+except ValueError as e:
+    print(e)
+    exit(1)
+except Exception as e:
+    print(f"Помилка: {e}")
+    exit(1)
