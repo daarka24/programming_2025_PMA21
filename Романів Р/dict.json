@@ -1,0 +1,16 @@
+{
+    "personal_data": {
+        "name": "Roma",
+        "surname": "Romaniv",
+        "age": "18"
+    },
+    "address":{
+        "street": "Lypynskoho",
+        "number": "29"
+    },
+    "work_place": {
+        "name": "Some_Company",
+        "position": "Galytska",
+        "company": "sofserve"
+    }
+}
