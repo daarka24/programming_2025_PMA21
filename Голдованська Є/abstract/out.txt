@@ -1,0 +1,3 @@
+Shape: Square, Side: 5.0, Perimeter: 20.0, Area: 25.0, Color: Pink
+Shape: Circle, Radius: 4.0, Perimeter: 25.132741228718345, Area: 50.26548245743669, Color: Blue
+Shape: Rectangle, Sides: [6.0, 7.0], Perimeter: 26.0, Area: 42.0, Color: Green
