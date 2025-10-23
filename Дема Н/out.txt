@@ -1,0 +1,15 @@
+Shape: Circle(radius - 4.0)
+Area: 50.27
+Perimeter: 25.13
+Color: pink
+
+Shape: Square(side - 7.0)
+Area: 49.00
+Perimeter: 28.00
+Color: brown
+
+Shape: Rectangle(width - 4.0, height - 5.0)
+Area: 20.00
+Perimeter: 18.00
+Color: white
+

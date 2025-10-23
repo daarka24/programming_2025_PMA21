@@ -1,0 +1,3 @@
+circle 4 pink
+square 7 brown
+rectangle 4 5 white
