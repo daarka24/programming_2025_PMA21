@@ -1,48 +1,37 @@
 from vector_class import Vector
 
-def read_vectors(filename):
+def read_data(filename):
     with open(filename, "r") as f:
         lines = f.readlines()
-    return [Vector([float(x) for x in line.split()]) for line in lines]
+
+    operation = lines[0].strip()
+    v1 = Vector([float(x) for x in lines[1].split()])
+    v2 = Vector([float(x) for x in lines[2].split()])
+
+    return operation, v1, v2
 
 def write_result(filename, text):
-    with open(filename, "a") as f:
-        f.write(text + "\n")
+    with open(filename, "w") as f:
+        f.write(text)
 
+operation, v1, v2 = read_data("data.txt")
 
-def main():
-    vectors = read_vectors("data.txt")
-
-    v1 = vectors[0]
-    v2 = vectors[1]
-
-    print("1. Додавання")
-    print("2. Віднімання")
-    print("3. Множення")
-    print("4. Ділення")
-
-    choice = int(input("Оберіть дію: "))
-
-    if choice == 1:
+try:
+    if operation == "+":
         result = v1 + v2
-        operation = "+"
-    elif choice == 2:
+    elif operation == "-":
         result = v1 - v2
-        operation = "-"
-    elif choice == 3:
+    elif operation == "*":
         result = v1 * v2
-        operation = "*"
-    elif choice == 4:
+    elif operation == "/":
         result = v1 / v2
-        operation = "/"
     else:
-        print("Неправильний вибір!")
-        return
+        raise ValueError("Невідома операція")
 
     text = f"{v1} {operation} {v2} = {result}"
-    print(text)
-    write_result("result.txt", text)
 
+except ValueError as e:
+    text = f"Помилка: {e}"
 
-if __name__ == "__main__":
-    main()
+print(text)
+write_result("result.txt", text)
