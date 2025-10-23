@@ -1,0 +1,5 @@
+circle 5 red
+square 3 green
+rectangle 4 6 blue
+circle 2 blue
+rectangle 10 2 red
