@@ -111,3 +111,4 @@ def menu_arraylist_file(my_list, filename):
 filename = "data.txt"
 my_arraylist = ArrayList()
 menu_arraylist_file(my_arraylist, filename)
+
