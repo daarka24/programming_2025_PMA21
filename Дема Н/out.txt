@@ -1,0 +1,8 @@
+display_forward: 3, Iron-man, Spider-man, 2, Hawkeye, Winter soldier, 3
+display_backward: 3, Winter soldier, Hawkeye, 2, Spider-man, Iron-man, 3
+get_by_index: ('With index ', 2, 'Spider-man')
+delete: Delete by index 3
+append: New hero to end 3
+prepend: New hero to begin 3
+insert: Add by index 3 - 3
+New display_forward: 3, 3, Iron-man, 3, 2, Hawkeye, Winter soldier, 3, 3
