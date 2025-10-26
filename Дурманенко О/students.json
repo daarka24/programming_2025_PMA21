@@ -1,0 +1,72 @@
+{
+    "001": {
+        "first_name": "Aboba",
+        "last_name": "Sigma",
+        "age": 20,
+        "grade_point_average": 3.8,
+        "major": "Computer Science"
+    },
+    "002": {
+        "first_name": "Gigachad",
+        "last_name": "Bogdan",
+        "age": 21,
+        "grade_point_average": 3.9,
+        "major": "Mathematics"
+    },
+    "003": {
+        "first_name": "Skibidi",
+        "last_name": "Rizz",
+        "age": 19,
+        "grade_point_average": 3.5,
+        "major": "Physics"
+    },
+    "004": {
+        "first_name": "Chad",
+        "last_name": "Thundercock",
+        "age": 22,
+        "grade_point_average": 3.7,
+        "major": "Chemistry"
+    },
+    "005": {
+        "first_name": "Sigma",
+        "last_name": "Gigabrain",
+        "age": 20,
+        "grade_point_average": 3.6,
+        "major": "Biology"
+    },
+    "006": {
+        "first_name": "Doge",
+        "last_name": "Shrek",
+        "age": 23,
+        "grade_point_average": 4.0,
+        "major": "Meme Studies"
+    },
+    "007": {
+        "first_name": "Wojak",
+        "last_name": "Pepe",
+        "age": 19,
+        "grade_point_average": 3.3,
+        "major": "Art"
+    },
+    "008": {
+        "first_name": "Zyzz",
+        "last_name": "Gyatt",
+        "age": 21,
+        "grade_point_average": 3.9,
+        "major": "Physical Education"
+    },
+    "009": {
+        "first_name": "Keanu",
+        "last_name": "Chungus",
+        "age": 22,
+        "grade_point_average": 3.8,
+        "major": "Philosophy"
+    },
+    "010": {
+        "first_name": "Steve",
+        "last_name": "Herobrine",
+        "age": 20,
+        "grade_point_average": 3.7,
+        "major": "Game Design"
+    }
+}
