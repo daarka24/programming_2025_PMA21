@@ -125,10 +125,6 @@ class Square(Rectangle):
             return f"{str(self.color).title()} квадрат з периметром {self.perimeter} та площею {self.area}."
         return f"Квадрат з периметром {self.perimeter} та площею {self.area}."
 
-    @property
-    def area(self):
-        return self.sides[0] ** 2
-
 
 
 
