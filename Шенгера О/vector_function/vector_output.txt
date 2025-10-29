@@ -1,0 +1,5 @@
+added_vector: [5.0, 7.0, 1.0]
+subtracted_vector: [-3.0, -3.0, 1.0]
+scalar_vector: 14.0
+multiplied_vector: [4.0, 10.0, 0.0]
+divided_vector: Can't divide by zero.
