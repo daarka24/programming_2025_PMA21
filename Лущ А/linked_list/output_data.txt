@@ -1,0 +1,17 @@
+New element to begin
+apple
+banana
+Inserted at index 3
+orange
+kiwi
+mango
+pineapple
+strawberry
+blueberry
+watermelon
+10
+25
+3.14
+42
+99
+New element to end

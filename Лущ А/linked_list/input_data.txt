@@ -1,0 +1,15 @@
+apple
+banana
+orange
+grape
+kiwi
+mango
+pineapple
+strawberry
+blueberry
+watermelon
+10
+25
+3.14
+42
+99
