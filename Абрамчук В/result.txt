@@ -1,0 +1,22 @@
+============================================================
+AVAILABLE COMMANDS:
+============================================================
+ADD|student_id|name|course|specialty|grade  - add student
+DELETE|student_id                           - delete student
+UPDATE|student_id|field|new_value           - update data
+SHOW|student_id                             - show student
+SHOW_ALL                                    - show all
+============================================================
+
+
+Command: SHOW_ALL
+--------------------------------------------------
+
+All students:
+==================================================
+
+ID: S001
+  name: Abramchuk Vlad
+  course: 3
+  specialty: fkfj
+  average_grade: 34.5
