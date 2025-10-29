@@ -1,0 +1,4 @@
+Plus: [7, 12, 8]
+Minus: [-1, -4, 4]
+Multiply: [12, 32, 12]
+Divide: [None, None, None]
