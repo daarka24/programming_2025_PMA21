@@ -1,0 +1,3 @@
+circle, purple, 5
+square, black, 5
+rectangle, white, 5, 5
