@@ -1,0 +1,5 @@
+ABC123,BMW,M5G90,2025,Andrian Lushch,120000
+XYZ789,Daewoo,Lanos,2007,Zakhar Palamar,777
+LMN456,Honda,Civic,2017,Misha Brown,5300
+DEF321,Volvo,V60,2013,Bogdan Bogdan,11111
+GHI654,BMW,320i,2019,Waka Waka,30000
