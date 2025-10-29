@@ -1,0 +1,25 @@
+Shape: Circle(radius=10.0)
+Area: 314.16
+Perimeter: 62.83
+Color info: Applying Red color
+
+Shape: Square(side=5.0)
+Area: 25.00
+Perimeter: 20.00
+Color info: Applying Blue color
+
+Shape: Rectangle(width=4.0, height=8.0)
+Area: 32.00
+Perimeter: 24.00
+Color info: Applying Green color
+
+Shape: Circle(radius=2.5)
+Area: 19.63
+Perimeter: 15.71
+Color info: Applying Blue color
+
+Shape: Square(side=7.0)
+Area: 49.00
+Perimeter: 28.00
+Color info: Applying Green color
+
