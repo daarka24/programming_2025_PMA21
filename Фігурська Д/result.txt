@@ -1,0 +1,25 @@
+Shape: Circle
+color: with purple
+area: 78.54
+perimeter: 31.42
+------------------------------
+Shape: Rectangle
+color: with yellow
+area: 21.0
+perimeter: 20.0
+------------------------------
+Shape: Circle
+color: without color
+area: 201.06
+perimeter: 50.27
+------------------------------
+Shape: Circle
+color: with purple
+area: 0.0
+perimeter: 0.0
+------------------------------
+Shape: Rectangle
+color: with black
+area: 12.0
+perimeter: 16.0
+------------------------------

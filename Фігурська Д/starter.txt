@@ -1,0 +1,10 @@
+circle purple 5
+rectangle yellow 3 7
+square black 4
+circle green 8
+rectangle purple 3
+square yellow abc
+circle purple five
+banana purple 5
+square black
+rectangle black 2 6
