@@ -1,0 +1,5 @@
+Plus: [4, 6, 10]
+Minus: [2, 6, 8]
+Multiply: [3, 0, 9]
+Divide by scalar: [1.5, 3.0, 4.5]
+Divide by vector: Error: Division by zero in vector.
