@@ -1,0 +1,5 @@
+Students who failed session:
+John Smith, born 2003-05-12, grades: [40, 45, 50, 38]
+Anna Brown, born 2004-01-23, grades: [48, 50, 42, 49]
+Mark Davis, born 2002-12-01, grades: [30, 25, 45, 40]
+Paul Green, born 2003-09-10, grades: [49, 50, 48, 47]
