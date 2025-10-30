@@ -1,5 +1,10 @@
-from shape import Shape, Circle, Square, Rectangle
-from color import Color, Pink, Brown, White
+from circle import Circle
+from rectangle import Rectangle
+from square import Square
+from color import Color
+from brown import Brown
+from white import White
+from pink import Pink
 def get_color(color_name: str) -> Color:
     colors={
         "pink": Pink(),
