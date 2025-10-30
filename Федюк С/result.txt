@@ -1,0 +1,22 @@
+Linked list []
+Added 12 (size = 1)
+Added 7 (size = 2)
+Added 25 (size = 3)
+Added 3 (size = 4)
+Added 18 (size = 5)
+Elements: [12, 7, 25, 3, 18] (size = 5)
+
+Inserted 50 at index 2 (size = 6)
+Elements: [12, 7, 50, 25, 3, 18] (size = 6)
+
+Inserted 99 at index 0 (size = 7)
+Inserted 33 at index 4 (size = 8)
+Inserted 5 at index 6 (size = 9)
+Elements: [99, 12, 7, 50, 33, 25, 5, 3, 18] (size = 9)
+
+removed 50 from index 3 (size = 8)
+Elements: [99, 12, 7, 33, 25, 5, 3, 18] (size = 8)
+
+All elements cleared (size = 0)
+Elements: [] (size = 0)
+
