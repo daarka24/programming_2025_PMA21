@@ -1,0 +1,41 @@
+Дані успішно завантажено з car_database.txt
+
+Початковий автопарк:
+Model S : Tesla
+Civic   : Honda
+M5      : BMW (Competition)
+Mustang : Ford
+
+Додано: Mustang -> Ford
+
+Після додавання 'Mustang':
+Model S : Tesla
+Civic   : Honda
+M5      : BMW (Competition)
+Mustang : Ford
+
+Ключ 'X5' не знайдено для оновлення.
+
+Оновлено: M5
+   Старе значення: BMW (Competition)
+   Нове значення: BMW (Competition)
+
+Після оновлення 'M5':
+Model S : Tesla
+Civic   : Honda
+M5      : BMW (Competition)
+Mustang : Ford
+
+Знайдено: Civic -> Honda
+
+Ключ 'Lanos' не знайдено у словнику.
+
+Ключ '911' не знайдено для видалення.
+
+Фінальний автопарк:
+Model S : Tesla
+Civic   : Honda
+M5      : BMW (Competition)
+Mustang : Ford
+
+Дані успішно збережено у файл car_database.txt
