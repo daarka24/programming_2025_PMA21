@@ -1,0 +1,211 @@
+Array way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Remove 2
+1 3 4 7
+insert 5 to 1
+1 5 3 4 7
+Remove a nu, at index 3
+1 5 3 7
+Clear
+
+Linked list way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Prepend 8
+8 1 2 3 4 7
+8 1 3 4 7
+insert 5 to 1
+8 5 1 3 4 7
+Remove a num, at index 3
+8 5 1 4 7
+Clear
+
+Array way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Remove 2
+1 3 4 7
+insert 5 to 1
+1 5 3 4 7
+Remove a nu, at index 3
+1 5 3 7
+Clear
+
+Linked list way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Prepend 8
+8 1 2 3 4 7
+8 1 3 4 7
+insert 5 to 1
+Array way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Remove 2
+1 3 4 7
+insert 5 to 1
+1 5 3 4 7
+Remove a nu, at index 3
+1 5 3 7
+Clear
+
+Linked list way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Prepend 8
+8 1 2 3 4 7
+8 1 3 4 7
+insert 5 to 1
+8 a 1 3 4 7
+Remove a num, at index 3
+8 a 1 4 7
+Clear
+
+Array way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Remove 2
+1 3 4 7
+insert 5 to 1
+1 5 3 4 7
+Remove a nu, at index 3
+1 5 3 7
+Clear
+
+Linked list way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Prepend 8
+8 1 2 3 4 7
+8 1 3 4 7
+insert a to 1
+8 a 1 3 4 7
+Remove a num, at index 3
+8 a 1 4 7
+Clear
+
+Array way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Remove 2
+1 3 4 7
+insert 5 to 1
+1 5 3 4 7
+Remove a nu, at index 3
+1 5 3 7
+Clear
+
+Linked list way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Prepend 8
+8 1 2 3 4 7
+8 1 3 4 7
+insert a to 1
+8 a 1 3 4 7
+Remove a num, at index 3
+8 a 1 4 7
+Clear
+
+Array way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Remove 2
+1 3 4 7
+insert 5 to 1
+1 5 3 4 7
+Remove a nu, at index 3
+1 5 3 7
+Clear
+
+Linked list way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Prepend 8
+8 1 2 3 4 7
+8 1 3 4 7
+insert a to 1
+8 a 1 3 4 7
+Remove a num, at index 3
+8 a 1 4 7
+Clear
+
+Array way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Remove 2
+1 3 4 7
+insert 5 to 1
+1 5 3 4 7
+Remove a nu, at index 3
+1 5 3 7
+Clear
+
+Linked list way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Prepend 8
+8 1 2 3 4 7
+8 1 3 4 7
+insert a to 1
+8 a 1 3 4 7
+Remove a num, at index 3
+8 a 1 4 7
+Clear
+
+Array way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Remove 2
+1 3 4 7
+insert 5 to 1
+1 5 3 4 7
+Remove a nu, at index 3
+1 5 3 7
+Clear
+
+Linked list way:
+From file
+1 2 3 4
+Append 7
+1 2 3 4 7
+Prepend 8
+8 1 2 3 4 7
+8 1 3 4 7
+insert a to 1
+8 a 1 3 4 7
+Remove a num, at index 3
+8 a 1 4 7
+Clear
+
