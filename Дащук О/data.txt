@@ -1,0 +1,15 @@
+Alice|Johnson|2003-04-15|90, 85, 88
+Bob|Smith|2002-11-03|45, 50, 49
+Charlie|Brown|2001-06-20|72, 68, 74
+Diana|Evans|2000-09-12|100, 100, 99
+Ethan|Miller|2003-01-30|40, 35, 42
+Fiona|Clark|2004-07-25|58, 63, 60
+George|Adams|2002-03-18|20, 25, 30
+Hannah|Lewis|2001-12-08|80, 82, 78
+Ivan|Petrov|2003-02-14|51, 50, 53
+Julia|Roberts|2004-05-05|95, 92, 97
+Kevin|Moore|2000-10-10|47, 49, 45
+Laura|White|2003-09-21|70, 65, 68
+Mark|Black|2002-08-01|100, 98, 99
+Nina|Taylor|2001-11-11|33, 40, 38
+Oscar|King|2004-03-03|76, 82, 79

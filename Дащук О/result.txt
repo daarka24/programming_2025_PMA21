@@ -1,0 +1,29 @@
+Successfully processed: 15 students
+
+Students who failed the session (5):
+
+Name: Bob Smith
+Birth date: 2002-11-03
+Grades: 45, 50, 49
+Average grade: 48.00
+
+Name: Ethan Miller
+Birth date: 2003-01-30
+Grades: 40, 35, 42
+Average grade: 39.00
+
+Name: George Adams
+Birth date: 2002-03-18
+Grades: 20, 25, 30
+Average grade: 25.00
+
+Name: Kevin Moore
+Birth date: 2000-10-10
+Grades: 47, 49, 45
+Average grade: 47.00
+
+Name: Nina Taylor
+Birth date: 2001-11-11
+Grades: 33, 40, 38
+Average grade: 37.00
+
