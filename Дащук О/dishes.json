@@ -1,0 +1,72 @@
+{
+    "001": {
+        "name": "Pizza Margherita",
+        "category": "Main Course",
+        "calories": 850,
+        "price": 9.99,
+        "is_vegetarian": true
+    },
+    "002": {
+        "name": "Beef Burger",
+        "category": "Main Course",
+        "calories": 1100,
+        "price": 12.50,
+        "is_vegetarian": false
+    },
+    "003": {
+        "name": "Caesar Salad",
+        "category": "Salad",
+        "calories": 420,
+        "price": 6.75,
+        "is_vegetarian": false
+    },
+    "004": {
+        "name": "Tomato Soup",
+        "category": "Soup",
+        "calories": 300,
+        "price": 5.20,
+        "is_vegetarian": true
+    },
+    "005": {
+        "name": "Grilled Salmon",
+        "category": "Main Course",
+        "calories": 680,
+        "price": 14.90,
+        "is_vegetarian": false
+    },
+    "006": {
+        "name": "Chocolate Cake",
+        "category": "Dessert",
+        "calories": 540,
+        "price": 4.80,
+        "is_vegetarian": true
+    },
+    "007": {
+        "name": "French Fries",
+        "category": "Side Dish",
+        "calories": 400,
+        "price": 3.50,
+        "is_vegetarian": true
+    },
+    "008": {
+        "name": "Grilled Chicken",
+        "category": "Main Course",
+        "calories": 700,
+        "price": 11.30,
+        "is_vegetarian": false
+    },
+    "009": {
+        "name": "Greek Yogurt",
+        "category": "Snack",
+        "calories": 150,
+        "price": 2.90,
+        "is_vegetarian": true
+    },
+    "010": {
+        "name": "Lemonade",
+        "category": "Drink",
+        "calories": 120,
+        "price": 2.50,
+        "is_vegetarian": true
+    }
+}
