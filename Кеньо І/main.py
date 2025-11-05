@@ -1,75 +1,47 @@
-class Vector:
 
-    def __init__(self, file_one):
-        self.vector_one, self.vector_two = self.readFromfile('vectors.txt')
+from vectors import Vector
 
-    @staticmethod
-    def readFromfile(file):
-        with open(file, 'r') as file_one:
-            lines = file_one.readlines()
-            vector_one = [float(v) for v in lines[0].strip().split()]
-            vector_two = [float(v) for v in lines[1].strip().split()]
-        return vector_one, vector_two
+def readFromfile(filename):
+    file_path = f'/Users/ilonakeno/PycharmProjects/vectorsClass/{filename}'
+    with open(file_path, 'r') as file_one:
+        line = file_one.readlines()
+        vector = [float(v) for v in line[0].strip().split()]
+    return vector
+def readN(filename):
+    file_path = f'/Users/ilonakeno/PycharmProjects/vectorsClass/{filename}'
+    with open(file_path, 'r') as file_n:
+        file_n = file_n.readlines()
+        n = file_n[0]
+        return n
+def print_to_file(filename, a):
+    file_path = f'/Users/ilonakeno/PycharmProjects/vectorsClass/{filename}'
+    with open(file_path, 'a') as file_two:
+        file_two.write('Results of action:\n')
+        file_two.write(str(a))
+        file_two.write('\n')
 
-    def sum_of_vectors(self):
-        if len(self.vector_one) != len(self.vector_two):
-            print("The length of the two vectors must be equal")
-            return None
-        return [self.vector_one[i] + self.vector_two[i] for i in range(len(self.vector_one))]
+if __name__=="__main__":
+    vector_one=Vector(readFromfile("vector_one.txt"))
+    vector_two=Vector(readFromfile("vector_two.txt"))
 
-    def sub_of_vectors(self):
-        if len(self.vector_one) != len(self.vector_two):
-            print("The length of the two vectors must be equal")
-            return None
-        return [self.vector_one[i] - self.vector_two[i] for i in range(len(self.vector_one))]
+    n=float(readN('n.txt'))
 
-    def multiply_vectors(self):
-        if len(self.vector_one) != len(self.vector_two):
-            print("The length of the two vectors must be equal")
-            return None
-        return [self.vector_one[i] * self.vector_two[i] for i in range(len(self.vector_one))]
+    s=vector_one.sum_of_vectors(vector_two)
+    sb=vector_one.sub_of_vectors(vector_two)
+    m=vector_one.multiply_vectors(vector_two)
+    sc=vector_one.find_scalar(vector_two)
+    msc=vector_one.mul_by_n(vector_two, n)
+    dsc=vector_one.div_by_n(vector_two, n)
 
-
-    def find_scalar(self):
-        if len(self.vector_one) != len(self.vector_two):
-            print("The length of the two vectors must be equal")
-            return None
-        return sum([self.vector_one[i] * self.vector_two[i] for i in range(len(self.vector_one))])
-    def mul_by_n(self, n):
-
-        return f'{[self.vector_one[i]*n for i in range(len(self.vector_one))]}\n{[self.vector_two[i]*n for i in range(len(self.vector_two))]}'
-    def div_by_n(self, n):
-
-        return f'{[self.vector_one[i]/n for i in range(len(self.vector_one))]}\n{[self.vector_two[i]*n for i in range(len(self.vector_two))]}'
+    print_to_file('output.txt', s)
+    print_to_file('output.txt', sb)
+    print_to_file('output.txt', m)
+    print_to_file('output.txt', sc)
+    print_to_file('output.txt', msc)
+    print_to_file('output.txt', dsc)
 
 
 
 
-with open('n.txt', 'r') as file_n:
-    file_n = file_n.readlines()
-    n=float(file_n[0])
 
 
-
-vector=Vector('vectors.txt')
-s=str(vector.sum_of_vectors())
-sb=str(vector.sub_of_vectors())
-m=str(vector.multiply_vectors())
-sc=str(vector.find_scalar())
-msc=str(vector.mul_by_n(n))
-dsc=str(vector.div_by_n(n))
-
-with open("output.txt", 'a') as file_two:
-    file_two.write('\n')
-    file_two.write(s)
-    file_two.write('\n')
-    file_two.write(sb)
-    file_two.write('\n')
-    file_two.write(m)
-    file_two.write('\n')
-    file_two.write(sc)
-    file_two.write('\n')
-    file_two.write(msc)
-    file_two.write('\n')
-    file_two.write(dsc)
-    file_two.write('\n')
