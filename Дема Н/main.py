@@ -1,72 +1,50 @@
-from LinkedList import LinkedList
+from my_array import ArrayList
+import os
 
-def load_from_file(filename):
-    linkedlist = LinkedList()
+def main():
+    filename = "in.txt"
+    if not os.path.exists(filename):
+        print("File doesn't exist")
+        return
+    list = ArrayList(size=10)
     try:
-        with open(filename) as f:
+        with open(filename, "r") as f:
             for line in f:
-                data = line.strip()
-                if data:
-                    linkedlist.append(data)
-    except:
-        print("File not found")
-        raise FileNotFoundError
-    return linkedlist
+                clean_line = line.strip()
+                if clean_line:
+                    list.add(clean_line)
+        print("Array added\n")
+        print(list)
+    except Exception as e:
+        print("Something went wrong")
+        return
+    print("Add by index\n")
+    if list.count > 0:
+        try:
+            i = int(input("Index: "))
+            v = str(input("Value: "))
+            list.insert(i, v)
+            print("Inserted value at index", i, v)
+        except ValueError:
+            print("Value must be an integer")
+            return
+        except IndexError as e:
+            print("Index out of range")
+        except Exception as e:
+            print("Something went wrong")
+    print("Remove by index\n")
+    if list.count > 0:
+        try:
+            i = int(input("Index: "))
+            list.remove(i)
+            print("Removed value at index", i, "list:", list)
+        except ValueError:
+            print("Value must be an integer")
+            return
+        except IndexError as e:
+            print("Index out of range")
+        except Exception as e:
+            print("Something went wrong")
+if __name__ == "__main__":
+    main()
 
-methods = {}
-file = load_from_file("data.txt")
-print("------ List forward ------")
-forward = file.display_forward()
-methods["display_forward"] = forward
-print("------ List backward ------")
-back = file.display_back()
-methods["display_backward"] = back
-try:
-    n = (int(input("Index: ")))
-    if n < 0:
-        raise IndexError("Index out of range")
-    print("With index ", n, " - ", file.get_by_index(n - 1))
-    methods["get_by_index"] = "With index ", n - 1, file.get_by_index(n - 1)
-except IndexError:
-    print("Index out of range")
-    raise
-except ValueError:
-    print("Value error")
-    raise ValueError
-try:
-    n = int(input("Delete by index: "))
-    file.remove(n-1)
-    file.save_to_file("data.txt")
-    methods["delete"] = f'Delete by index {n}'
-except IndexError:
-    print("Index out of range")
-try:
-    new = str(input("New hero to end: "))
-    file.append(new)
-    file.save_to_file("data.txt")
-    methods["append"] = f'New hero to end {new}'
-except Exception as e:
-    print("ERROR:", e)
-    raise
-try:
-    new = str(input("New hero to begin: "))
-    file.prepend(new)
-    file.save_to_file("data.txt")
-    methods["prepend"] = f'New hero to begin {new}'
-except Exception as e:
-    print("ERROR:", e)
-    raise
-try:
-    n = int(input("Add by index: "))
-    hero = (str(input("Hero: ")))
-    file.insert(n, hero)
-    file.save_to_file("data.txt")
-    methods["insert"] = f'Add by index {n} - {hero}'
-except IndexError:
-    print("Index out of range")
-print("------ New list forward ------")
-new = file.display_forward()
-methods["New display_forward"] = new
-with open("out.txt", "w") as f:
-    for key, item in methods.items():
-        f.write(f"{key}: {item}\n")
