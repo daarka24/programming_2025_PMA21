@@ -1,0 +1,16 @@
+{
+  "black_orange": {
+    "price": 95,
+    "bean": "Ethiopia"
+  },
+  "latte_caramel": {
+    "price": 150,
+    "bean": "Arabica",
+    "method": "espresso"
+  },
+  "cold_brew": {
+    "price": 120,
+    "bean": "Colombia",
+    "method": "cold_brew"
+  }
+}

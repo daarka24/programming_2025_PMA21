@@ -1,0 +1,17 @@
+{
+"black_orange": {
+  "price": 95,
+  "bean": "Ethiopia",
+  "method": "V60"
+},
+  "aeropress":{
+  "price": 115,
+  "bean": "Colombia",
+  "method": "aeropress"
+  },
+  "latte_caramel": {
+  "price": 100,
+  "bean": "Arabica",
+  "method": "espresso"
+  }
+}
