@@ -1,0 +1,15 @@
+LinkedList Output (Total Items: 14)
+5
+13
+7
+8
+3
+10
+57
+34
+65
+64
+2
+1
+78
+101
